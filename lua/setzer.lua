@@ -58,6 +58,7 @@ function M.setup()
 
 		-- Green
 		light_green = "#A6E67E",
+		granny_spith_apple = "#88D498",
 	}
 
 	local palette = {
@@ -79,16 +80,19 @@ function M.setup()
 			medium = colors.light_gray,
 			brighter = colors.cultured_white,
 			brightest = colors.white,
-			green = colors.light_green,
-			blue = colors.little_boy_blue,
-      yellow = colors.deep_champagne,
+			light_green = colors.light_green,
+			deep_green = colors.granny_spith_apple,
+			light_blue = colors.little_boy_blue,
+			deep_blue = colors.dodger_blue,
+			light_yellow = colors.deep_champagne,
+			deep_yellow = colors.maximum_yellow_red,
 		},
 	}
 
 	local groups = {
 		normal = { fg = palette.foreground.medium, bg = palette.background.darkest },
 		selection = { fg = palette.selection.foreground, bg = palette.selection.background },
-		parents = { fg = palette.foreground.blue, bg = palette.background.darkest },
+		parents = { fg = palette.foreground.light_blue, bg = palette.background.darkest },
 
 		darkest = { fg = palette.foreground.darkest },
 		darker = { fg = palette.foreground.darker },
@@ -189,16 +193,16 @@ function M.setup()
 		Type = groups.brighter,
 		Typedef = groups.brighter,
 
-    -- String
-    TSSTring = groups.brightest_italic,
-    TSSTringField = groups.medium,
-    TSStringSpecial = groups.medium,
+		-- String
+		TSSTring = groups.brightest_italic,
+		TSSTringField = groups.medium,
+		TSStringSpecial = groups.medium,
 
-    -- Functions and Method
+		-- Functions and Method
 		TSFunction = groups.dimmed_italic,
 		TSFuncBuiltin = groups.dimmed_italic,
-    TSConstructor = groups.medium_italic,
-		TSMethodCall = { link = 'TSFunction' },
+		TSConstructor = groups.medium_italic,
+		TSMethodCall = { link = "TSFunction" },
 
 		TSPunctBracket = groups.dimmed,
 
@@ -215,21 +219,21 @@ function M.setup()
 		TSVariable = groups.medium,
 		TSVariableBuiltin = { fg = palette.foreground.brighter, em = "bold" },
 
-    -- LSP
-    DiagnosticHint =  { fg = palette.foreground.blue },
-		LspDiagnosticsSignHint = { fg = palette.foreground.blue },
-		LspDiagnosticsVirtualTextHint = { fg = palette.foreground.blue },
-		LspDiagnosticsFloatingHint = { fg = palette.foreground.blue },
-		LspDiagnosticsUnderlineHint = { fg =palette.foreground.blue , em = "undercurl"},
+		-- LSP
+		DiagnosticHint = { fg = palette.foreground.light_blue },
+		LspDiagnosticsSignHint = { fg = palette.foreground.light_blue },
+		LspDiagnosticsVirtualTextHint = { fg = palette.foreground.light_blue },
+		LspDiagnosticsFloatingHint = { fg = palette.foreground.light_blue },
+		LspDiagnosticsUnderlineHint = { fg = palette.foreground.light_blue, em = "undercurl" },
 
-    DiagnosticWarn =  { fg = palette.foreground.yellow },
-		LspDiagnosticsSignWarning = { fg = palette.foreground.yellow },
-		LspDiagnosticsFloatingWarning = { fg = palette.foreground.yellow },
-		LspDiagnosticsVirtualTextWarning = { fg = palette.foreground.yellow },
-		LspDiagnosticsUnderlineWarning = {  fg = palette.foreground.yellow , em = "undercurl" },
+		DiagnosticWarn = { fg = palette.foreground.deep_yellow },
+		LspDiagnosticsSignWarning = { fg = palette.foreground.deep_yellow },
+		LspDiagnosticsFloatingWarning = { fg = palette.foreground.deep_yellow },
+		LspDiagnosticsVirtualTextWarning = { fg = palette.foreground.deep_yellow },
+		LspDiagnosticsUnderlineWarning = { fg = palette.foreground.deep_yellow, em = "undercurl" },
 
 		-- Git
-		DiffAdd = { fg = colors.light_green, bg = palette.background.darkest },
+		DiffAdd = { fg = palette.foreground.light_green, bg = palette.background.darkest },
 		DiffChange = { fg = colors.maximum_yellow_red, bg = palette.background.darkest },
 		DiffDelete = { fg = colors.light_coral, bg = palette.background.darkest },
 		DiffText = { fg = colors.dodger_blue, bg = palette.background.darkest },
@@ -243,6 +247,9 @@ function M.setup()
 		SignifySignChange = { link = "DiffChange" },
 		SignifySignDelete = { link = "DiffDelete" },
 
+		-- Packer
+		packerSuccess = { link = "DiffAdd" },
+
 		-- Floaterm
 		NormalFloat = groups.brightest,
 
@@ -252,6 +259,13 @@ function M.setup()
 
 		-- LspInfo
 		LspInfoBorder = { fg = palette.foreground.brightest },
+
+		-- Leap
+		LeapMatch = { fg = palette.foreground.light_blue },
+		LeapLabelPrimary = { fg = palette.foreground.light_blue, em = "bold" },
+		LeapLabelSecondary = { fg = palette.foreground.deep_green, em = "bold,italic" },
+		LeapLabelSelected = { fg = palette.foreground.deep_green },
+		LeapBackdrop = { fg = palette.foreground.darkest },
 
 		-- Telescope
 		TelescopeBorder = groups.brighter,
